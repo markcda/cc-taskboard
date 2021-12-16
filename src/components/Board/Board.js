@@ -7,7 +7,7 @@ const Board = () => {
   return (
     <div className={style.tasksboard_container}>
       {cards?.map((card) => (
-        <Card key={card.id} card={card} />
+        <Card key={card.id} card={card}/>
       ))}
     </div>
   );

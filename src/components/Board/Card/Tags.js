@@ -7,13 +7,13 @@ const Tags = ({ tags }) => {
   return (
     <div className={style.tags_container}>
       {tags?.map((tag) => (
-        <div style={{ backgroundColor: tag.tagColor }} className={style.tag}>
+        <div style={{backgroundColor: tag.tagColor}} className={style.tag}>
           {tag.tagName}
         </div>
       ))}
 
       <button className={style.add_tag}>
-        <IconContext.Provider value={{ className: style.add_tag_btn_icon }}>
+        <IconContext.Provider value={{className: style.add_tag_btn_icon}}>
           <BsPlusLg />
         </IconContext.Provider>{" "}
         Добавить...
@@ -21,4 +21,5 @@ const Tags = ({ tags }) => {
     </div>
   );
 };
+
 export default Tags;

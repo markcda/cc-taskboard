@@ -1,10 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
 export const fetchBoard = createAsyncThunk("board/fetchBoard", async () => {
   const response = await fetch(
-    "https://my-json-server.typicode.com/cansolele/jsonserver/page"
+    "http://127.0.0.1:8004/",
+    {
+      body: JSON.stringify("") // здесь должен быть ключ
+    }
   );
   return await response.json();
 });
+
 export const postSubTask = createAsyncThunk(
   "board/postSubTask",
   async (inputSubTask, { dispatch }) => {
@@ -26,6 +31,7 @@ export const postSubTask = createAsyncThunk(
     dispatch(addSubTask(data));
   }
 );
+
 const boardSlice = createSlice({
   name: "board",
   initialState: {
@@ -45,5 +51,7 @@ const boardSlice = createSlice({
     [fetchBoard.rejected]: (state, action) => {},
   },
 });
+
 const { addSubTask } = boardSlice.actions;
+
 export default boardSlice.reducer;

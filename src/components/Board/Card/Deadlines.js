@@ -15,4 +15,5 @@ const Deadlines = () => {
     </div>
   );
 };
+
 export default Deadlines;
